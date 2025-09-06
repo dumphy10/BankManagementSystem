@@ -29,6 +29,27 @@ public class SignupOne extends JFrame  {
         personalDetails.setBounds(290,80,400,30);
         add(personalDetails);
 
+        //Step5
+        //For Name
+        JLabel name = new JLabel("Name:");
+        name.setFont(new Font("Raleway",Font.BOLD,20));
+        name.setBounds(100,140,100,30);
+        add(name);
+
+        //Step6
+        //For Father Name
+        JLabel fatherName = new JLabel("Father Name:");
+        fatherName.setFont(new Font("Raleway",Font.BOLD,20));
+        fatherName.setBounds(100,190,150,30);
+        add(fatherName);
+
+        //Step7
+        //For DOB
+        JLabel dob = new JLabel("Date Of Birth:");
+        dob.setFont(new Font("Raleway",Font.BOLD,20));
+        dob.setBounds(100,240,200,30);
+        add(dob);
+
 
 
 
