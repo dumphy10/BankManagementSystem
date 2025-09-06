@@ -15,6 +15,13 @@ public class Login extends JFrame {
             setVisible(true); //by default frame is not visible so we have to make it visible
             setLocation(350,200);//by default when the frame starts it starts from top left, so to start from centre we used se location
 
+            //step3
+            ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg"));//to load the image
+            Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);//to scale image / set dimension for image
+            ImageIcon i3 = new ImageIcon(i2);//
+            JLabel label =new JLabel(i3);// Put image inside JLabel
+            add(label);// Add JLabel to frame
+            label.setBounds(70,10,100,100);//to set location for label
 
 
 
