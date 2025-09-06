@@ -50,6 +50,54 @@ public class SignupOne extends JFrame  {
         dob.setBounds(100,240,200,30);
         add(dob);
 
+        //Step8
+        //For gender
+        JLabel gender = new JLabel("Gender:");
+        gender.setFont(new Font("Raleway",Font.BOLD,20));
+        gender.setBounds(100,290,100,30);
+        add(gender);
+
+        //Step9
+        //For email
+        JLabel email = new JLabel("Email Address:");
+        email.setFont(new Font("Raleway",Font.BOLD,20));
+        email.setBounds(100,340,200,30);
+        add(email);
+
+        //Step10
+        //For Marital status
+        JLabel maritalStatus = new JLabel("Marital Status:");
+        maritalStatus.setFont(new Font("Raleway",Font.BOLD,20));
+        maritalStatus.setBounds(100,390,200,30);
+        add(maritalStatus);
+
+        //Step11
+        //For address
+        JLabel address = new JLabel("Address:");
+        address.setFont(new Font("Raleway",Font.BOLD,20));
+        address.setBounds(100,440,200,30);
+        add(address);
+
+        //Step12
+        //For city
+        JLabel city = new JLabel("City:");
+        city.setFont(new Font("Raleway",Font.BOLD,20));
+        city.setBounds(100,490,200,30);
+        add(city);
+
+        JLabel state = new JLabel("State:");
+        state.setFont(new Font("Raleway",Font.BOLD,20));
+        state.setBounds(100,540,200,30);
+        add(state);
+
+        JLabel pinCode = new JLabel("Pin Code:");
+        pinCode.setFont(new Font("Raleway",Font.BOLD,20));
+        pinCode.setBounds(100,590,200,30);
+        add(pinCode);
+
+
+
+
 
 
 
