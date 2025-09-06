@@ -104,11 +104,14 @@ public class Login extends JFrame implements ActionListener {
     //Step9
     //what actions will be performed when we click a button
     public void actionPerformed(ActionEvent ae) {
-
+        if (ae.getSource() == clear){   //getSource() tells which button is clicked and what is the source
+            cardTextField.setText("");
+            pinTextField.setText("");
 
         } else if (ae.getSource() == login) {
 
         } else if (ae.getSource() == signUp) {
+
 
         }
     }
