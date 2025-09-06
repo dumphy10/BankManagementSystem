@@ -2,8 +2,10 @@ package bank.management.system;
 
 import javax.swing.*; //contains JFrame
 import java.awt.*; //contains Image class
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Login extends JFrame {
+public class Login extends JFrame implements ActionListener {
         Login(){
 
             //step2
@@ -83,13 +85,18 @@ public class Login extends JFrame {
             //step4
             getContentPane().setBackground(Color.WHITE);//setting frame color,  getContentPane() holds the whole fram
 
-
-
         }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 
 
 
     public static void main(String[] args) {
             new Login();
     }
+
+
 }
