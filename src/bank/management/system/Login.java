@@ -56,6 +56,29 @@ public class Login extends JFrame {
             pinTextField.setBounds(300,220,250,30);
             add(pinTextField);
 
+            //Step8
+            //Creating buttons on the frame
+            //Login button
+            JButton login = new JButton("SIGN IN");
+            login.setBounds(300,300,100,30);
+            login.setBackground(Color.BLACK);
+            login.setForeground(Color.WHITE);
+            add(login);
+
+            //Clear button
+            JButton clear = new JButton("CLEAR");
+            clear.setBounds(450,300,100,30);
+            clear.setBackground(Color.BLACK);
+            clear.setForeground(Color.WHITE);
+            add(clear);
+
+            //SignUp button
+            JButton signUp = new JButton("SIGN UP");
+            signUp.setBounds(300,350,250,30);
+            signUp.setBackground(Color.BLACK);
+            signUp.setForeground(Color.WHITE);
+            add(signUp);
+
 
             //step4
             getContentPane().setBackground(Color.WHITE);//setting frame color,  getContentPane() holds the whole fram
