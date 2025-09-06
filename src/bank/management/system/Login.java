@@ -19,11 +19,17 @@ public class Login extends JFrame {
             ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/logo.jpg"));//to load the image
             Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);//to scale image / set dimension for image
             ImageIcon i3 = new ImageIcon(i2);//
-            JLabel label =new JLabel(i3);// Put image inside JLabel
+            JLabel label =new JLabel(i3);// Put image inside JLabel(used to set Image)
             add(label);// Add JLabel to frame
-            label.setBounds(70,10,100,100);//to set location for label
+            label.setBounds(70,10,100,100);//to set location for the Image
 
-            //step6
+            //JLabel majorly used to write content on frame
+            JLabel text = new JLabel("Welcome to ATM");
+            text.setFont(new Font("Osward",Font.BOLD,38));
+            text.setBounds(200,40,400,40);//to set location for the text
+            add(text);
+
+            //step4
             getContentPane().setBackground(Color.WHITE);//setting frame color,  getContentPane() holds the whole fram
 
 
