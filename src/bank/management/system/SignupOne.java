@@ -141,6 +141,15 @@ public class SignupOne extends JFrame  {
         marital.add(other);
         marital.add(other);
 
+        //Step21
+        //Next button
+        JButton next = new JButton("Next");
+        next.setBounds(620,660,80,30);
+        next.setBackground(Color.BLACK);
+        next.setForeground(Color.WHITE);
+        next.setFont(new Font("Raleway",Font.BOLD,14));
+        add(next);
+
 
 
         //Step11
