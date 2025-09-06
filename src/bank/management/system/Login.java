@@ -23,6 +23,9 @@ public class Login extends JFrame {
             add(label);// Add JLabel to frame
             label.setBounds(70,10,100,100);//to set location for label
 
+            //step6
+            getContentPane().setBackground(Color.WHITE);//setting frame color,  getContentPane() holds the whole fram
+
 
 
         }
