@@ -118,6 +118,29 @@ public class SignupOne extends JFrame  {
         maritalStatus.setBounds(100,390,200,30);
         add(maritalStatus);
 
+        //Step19
+        //radiobutton for marital
+        JRadioButton married = new JRadioButton("Married");
+        married.setBounds(300,390,100,30);
+        married.setBackground(Color.WHITE);
+        add(married);
+        JRadioButton unmarried = new JRadioButton("Unmarried");
+        unmarried.setBounds(450,390,100,30);
+        unmarried.setBackground(Color.WHITE);
+        add(unmarried);
+        JRadioButton other = new JRadioButton("Other");
+        other.setBounds(600,390,100,30);
+        other.setBackground(Color.WHITE);
+        add(other);
+
+
+        //Step20
+        //To remove the problem of selecting  radiobuttons
+        ButtonGroup marital = new ButtonGroup();
+        marital.add(married);
+        marital.add(other);
+        marital.add(other);
+
 
 
         //Step11
