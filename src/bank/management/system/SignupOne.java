@@ -3,6 +3,7 @@ package bank.management.system;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+import com.toedter.calendar.JDateChooser;
 
 public class SignupOne extends JFrame  {
 
@@ -65,7 +66,11 @@ public class SignupOne extends JFrame  {
         add(dob);
 
         //step16
-        //
+        //adding Dob chooser
+        JDateChooser dateChooser = new JDateChooser();
+        dateChooser.setBounds(300,240,400,30);
+        dateChooser.setForeground(new Color(105,105,105));
+        add(dateChooser);
 
         //Step8
         //For gender
