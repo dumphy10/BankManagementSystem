@@ -22,6 +22,13 @@ public class SignupOne extends JFrame  {
         formno.setBounds(140,20,600,40);
         add(formno);
 
+        //For writing  "Personal details (Page 1)"
+        //Step4
+        JLabel personalDetails = new JLabel("Page 1: Personal Details");
+        personalDetails.setFont(new Font("Raleway",Font.BOLD,22));
+        personalDetails.setBounds(290,80,400,30);
+        add(personalDetails);
+
 
 
 
