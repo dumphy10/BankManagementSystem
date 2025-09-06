@@ -36,12 +36,26 @@ public class SignupOne extends JFrame  {
         name.setBounds(100,140,100,30);
         add(name);
 
+        //Step15
+        //adding text field for each...
+        JTextField nameTextfield = new JTextField();
+        nameTextfield.setFont(new Font("Raleway",Font.BOLD,14));
+        nameTextfield.setBounds(300,140,400,30);
+        add(nameTextfield);
+
+
         //Step6
         //For Father Name
         JLabel fatherName = new JLabel("Father Name:");
         fatherName.setFont(new Font("Raleway",Font.BOLD,20));
         fatherName.setBounds(100,190,150,30);
         add(fatherName);
+
+        //textfield
+        JTextField fNameTextfield = new JTextField();
+        fNameTextfield.setFont(new Font("Raleway",Font.BOLD,14));
+        fNameTextfield.setBounds(300,190,400,30);
+        add(fNameTextfield);
 
         //Step7
         //For DOB
@@ -50,12 +64,16 @@ public class SignupOne extends JFrame  {
         dob.setBounds(100,240,200,30);
         add(dob);
 
+
+
         //Step8
         //For gender
         JLabel gender = new JLabel("Gender:");
         gender.setFont(new Font("Raleway",Font.BOLD,20));
         gender.setBounds(100,290,100,30);
         add(gender);
+
+
 
         //Step9
         //For email
@@ -64,12 +82,20 @@ public class SignupOne extends JFrame  {
         email.setBounds(100,340,200,30);
         add(email);
 
+        //textfield
+        JTextField emailTextfield = new JTextField();
+        emailTextfield.setFont(new Font("Raleway",Font.BOLD,14));
+        emailTextfield.setBounds(300,340,400,30);
+        add(emailTextfield);
+
         //Step10
         //For Marital status
         JLabel maritalStatus = new JLabel("Marital Status:");
         maritalStatus.setFont(new Font("Raleway",Font.BOLD,20));
         maritalStatus.setBounds(100,390,200,30);
         add(maritalStatus);
+
+
 
         //Step11
         //For address
@@ -78,6 +104,12 @@ public class SignupOne extends JFrame  {
         address.setBounds(100,440,200,30);
         add(address);
 
+        //textfield
+        JTextField addressTextfield = new JTextField();
+        addressTextfield.setFont(new Font("Raleway",Font.BOLD,14));
+        addressTextfield.setBounds(300,440,400,30);
+        add(addressTextfield);
+
         //Step12
         //For city
         JLabel city = new JLabel("City:");
@@ -85,15 +117,35 @@ public class SignupOne extends JFrame  {
         city.setBounds(100,490,200,30);
         add(city);
 
+        //textfield
+        JTextField cityTextfield = new JTextField();
+        cityTextfield.setFont(new Font("Raleway",Font.BOLD,14));
+        cityTextfield.setBounds(300,490,400,30);
+        add(cityTextfield);
+
+        //Step13
         JLabel state = new JLabel("State:");
         state.setFont(new Font("Raleway",Font.BOLD,20));
         state.setBounds(100,540,200,30);
         add(state);
 
+        //textfield
+        JTextField stateTextfield = new JTextField();
+        stateTextfield.setFont(new Font("Raleway",Font.BOLD,14));
+        stateTextfield.setBounds(300,540,400,30);
+        add(stateTextfield);
+
+        //Step14
         JLabel pinCode = new JLabel("Pin Code:");
         pinCode.setFont(new Font("Raleway",Font.BOLD,20));
         pinCode.setBounds(100,590,200,30);
         add(pinCode);
+
+        //textfield
+        JTextField pinTextfield = new JTextField();
+        pinTextfield.setFont(new Font("Raleway",Font.BOLD,14));
+        pinTextfield.setBounds(300,590,400,30);
+        add(pinTextfield);
 
 
 
