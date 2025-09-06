@@ -23,11 +23,25 @@ public class Login extends JFrame {
             add(label);// Add JLabel to frame
             label.setBounds(70,10,100,100);//to set location for the Image
 
+            //step5
             //JLabel majorly used to write content on frame
             JLabel text = new JLabel("Welcome to ATM");
             text.setFont(new Font("Osward",Font.BOLD,38));
             text.setBounds(200,40,400,40);//to set location for the text
             add(text);
+
+            //step6
+            //Same JLabel for card no
+            JLabel cardno = new JLabel("Card No:");
+            cardno.setFont(new Font("Raleway",Font.BOLD,28));
+            cardno.setBounds(120,150,400,40);//to set location for the text
+            add(cardno);
+            //for pin
+            JLabel pin = new JLabel("PIN:");
+            pin.setFont(new Font("Raleway",Font.BOLD,28));
+            pin.setBounds(120,220,400,40);//to set location for the text
+            add(pin);
+
 
             //step4
             getContentPane().setBackground(Color.WHITE);//setting frame color,  getContentPane() holds the whole fram
