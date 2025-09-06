@@ -79,6 +79,23 @@ public class SignupOne extends JFrame  {
         gender.setBounds(100,290,100,30);
         add(gender);
 
+        //Step17
+        //radiobutton for gender
+        JRadioButton male = new JRadioButton("Male");
+        male.setBounds(300,290,60,30);
+        male.setBackground(Color.WHITE);
+        add(male);
+        JRadioButton female = new JRadioButton("Female");
+        female.setBounds(450,290,80,30);
+        female.setBackground(Color.WHITE);
+        add(female);
+
+        //Step18
+        //To remove the problem of selecting both radiobuttons
+        ButtonGroup genderGroup = new ButtonGroup();
+        genderGroup.add(male);
+        genderGroup.add(female);
+
 
 
         //Step9
