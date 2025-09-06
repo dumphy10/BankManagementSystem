@@ -6,6 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Login extends JFrame implements ActionListener {
+
+        //We have globally defined the buttons so that we can use it anywhere
+        JButton login, signUp, clear;
+        //We have globally defined the buttons so that we can use it anywhere
+        JTextField cardTextField;
+        JPasswordField pinTextField; //to hide password
+
         Login(){
 
             //step2
@@ -41,8 +48,9 @@ public class Login extends JFrame implements ActionListener {
 
             //Step7
             //creating textField where user will give input to cardNo
-            JTextField cardTextField = new JTextField();
+            cardTextField = new JTextField();
             cardTextField.setBounds(300,150,250,30);
+            cardTextField.setFont(new Font("Ariel",Font.BOLD,14));
             add(cardTextField);
 
             //step6
@@ -54,31 +62,35 @@ public class Login extends JFrame implements ActionListener {
 
             //Step7
             //creating textField where user will give input to pin
-            JTextField pinTextField = new JTextField();
+            pinTextField = new JPasswordField();
             pinTextField.setBounds(300,220,250,30);
+            pinTextField.setFont(new Font("Ariel",Font.BOLD,14));
             add(pinTextField);
 
             //Step8
             //Creating buttons on the frame
             //Login button
-            JButton login = new JButton("SIGN IN");
+            login = new JButton("SIGN IN");
             login.setBounds(300,300,100,30);
             login.setBackground(Color.BLACK);
             login.setForeground(Color.WHITE);
+            login.addActionListener(this);
             add(login);
 
             //Clear button
-            JButton clear = new JButton("CLEAR");
+            clear = new JButton("CLEAR");
             clear.setBounds(450,300,100,30);
             clear.setBackground(Color.BLACK);
             clear.setForeground(Color.WHITE);
+            clear.addActionListener(this);
             add(clear);
 
             //SignUp button
-            JButton signUp = new JButton("SIGN UP");
+            signUp = new JButton("SIGN UP");
             signUp.setBounds(300,350,250,30);
             signUp.setBackground(Color.BLACK);
             signUp.setForeground(Color.WHITE);
+            signUp.addActionListener(this);
             add(signUp);
 
 
@@ -87,9 +99,18 @@ public class Login extends JFrame implements ActionListener {
 
         }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
+    @Override
+    //Step9
+    //what actions will be performed when we click a button
+    public void actionPerformed(ActionEvent ae) {
+
+
+        } else if (ae.getSource() == login) {
+
+        } else if (ae.getSource() == signUp) {
+
+        }
     }
 
 
