@@ -10,6 +10,9 @@ public class SignupOne extends JFrame  {
     //globally defining
     long random;
     JTextField nameTextField, fNameTextField, emailTextField, addressTextField, cityTextField, stateTextField, pinTextField;
+    JButton next;
+    JRadioButton male, female, other, married, unmarried;
+    JDateChooser dateChooser;
 
 
     SignupOne(){
@@ -72,7 +75,7 @@ public class SignupOne extends JFrame  {
 
         //step16
         //adding Dob chooser
-        JDateChooser dateChooser = new JDateChooser();
+        dateChooser = new JDateChooser();
         dateChooser.setBounds(300,240,400,30);
         dateChooser.setForeground(new Color(105,105,105));
         add(dateChooser);
@@ -86,11 +89,11 @@ public class SignupOne extends JFrame  {
 
         //Step17
         //radiobutton for gender
-        JRadioButton male = new JRadioButton("Male");
+        male = new JRadioButton("Male");
         male.setBounds(300,290,60,30);
         male.setBackground(Color.WHITE);
         add(male);
-        JRadioButton female = new JRadioButton("Female");
+        female = new JRadioButton("Female");
         female.setBounds(450,290,80,30);
         female.setBackground(Color.WHITE);
         add(female);
@@ -125,15 +128,15 @@ public class SignupOne extends JFrame  {
 
         //Step19
         //radiobutton for marital
-        JRadioButton married = new JRadioButton("Married");
+        married = new JRadioButton("Married");
         married.setBounds(300,390,100,30);
         married.setBackground(Color.WHITE);
         add(married);
-        JRadioButton unmarried = new JRadioButton("Unmarried");
+        unmarried = new JRadioButton("Unmarried");
         unmarried.setBounds(450,390,100,30);
         unmarried.setBackground(Color.WHITE);
         add(unmarried);
-        JRadioButton other = new JRadioButton("Other");
+        other = new JRadioButton("Other");
         other.setBounds(600,390,100,30);
         other.setBackground(Color.WHITE);
         add(other);
@@ -148,7 +151,7 @@ public class SignupOne extends JFrame  {
 
         //Step21
         //Next button
-        JButton next = new JButton("Next");
+        next = new JButton("Next");
         next.setBounds(620,660,80,30);
         next.setBackground(Color.BLACK);
         next.setForeground(Color.WHITE);
