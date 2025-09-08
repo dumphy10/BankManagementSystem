@@ -7,6 +7,11 @@ import com.toedter.calendar.JDateChooser;
 
 public class SignupOne extends JFrame  {
 
+    //globally defining
+    long random;
+    JTextField nameTextField, fNameTextField, emailTextField, addressTextField, cityTextField, stateTextField, pinTextField;
+
+
     SignupOne(){
 
         setLayout(null);
@@ -14,7 +19,7 @@ public class SignupOne extends JFrame  {
 
         //generating random no. for form no.
         Random ran = new Random();
-        long random = Math.abs((ran.nextLong() % 9000L) + 1000L); //To get only four digit positive no.
+        random = Math.abs((ran.nextLong() % 9000L) + 1000L); //To get only four digit positive no.
 
         //Step3
         //Form No
@@ -39,10 +44,10 @@ public class SignupOne extends JFrame  {
 
         //Step15
         //adding text field for each...
-        JTextField nameTextfield = new JTextField();
-        nameTextfield.setFont(new Font("Raleway",Font.BOLD,14));
-        nameTextfield.setBounds(300,140,400,30);
-        add(nameTextfield);
+        nameTextField = new JTextField();
+        nameTextField.setFont(new Font("Raleway",Font.BOLD,14));
+        nameTextField.setBounds(300,140,400,30);
+        add(nameTextField);
 
 
         //Step6
@@ -53,10 +58,10 @@ public class SignupOne extends JFrame  {
         add(fatherName);
 
         //textfield
-        JTextField fNameTextfield = new JTextField();
-        fNameTextfield.setFont(new Font("Raleway",Font.BOLD,14));
-        fNameTextfield.setBounds(300,190,400,30);
-        add(fNameTextfield);
+        fNameTextField = new JTextField();
+        fNameTextField.setFont(new Font("Raleway",Font.BOLD,14));
+        fNameTextField.setBounds(300,190,400,30);
+        add(fNameTextField);
 
         //Step7
         //For DOB
@@ -106,10 +111,10 @@ public class SignupOne extends JFrame  {
         add(email);
 
         //textfield
-        JTextField emailTextfield = new JTextField();
-        emailTextfield.setFont(new Font("Raleway",Font.BOLD,14));
-        emailTextfield.setBounds(300,340,400,30);
-        add(emailTextfield);
+        emailTextField = new JTextField();
+        emailTextField.setFont(new Font("Raleway",Font.BOLD,14));
+        emailTextField.setBounds(300,340,400,30);
+        add(emailTextField);
 
         //Step10
         //For Marital status
@@ -160,10 +165,10 @@ public class SignupOne extends JFrame  {
         add(address);
 
         //textfield
-        JTextField addressTextfield = new JTextField();
-        addressTextfield.setFont(new Font("Raleway",Font.BOLD,14));
-        addressTextfield.setBounds(300,440,400,30);
-        add(addressTextfield);
+        addressTextField = new JTextField();
+        addressTextField.setFont(new Font("Raleway",Font.BOLD,14));
+        addressTextField.setBounds(300,440,400,30);
+        add(addressTextField);
 
         //Step12
         //For city
@@ -173,10 +178,10 @@ public class SignupOne extends JFrame  {
         add(city);
 
         //textfield
-        JTextField cityTextfield = new JTextField();
-        cityTextfield.setFont(new Font("Raleway",Font.BOLD,14));
-        cityTextfield.setBounds(300,490,400,30);
-        add(cityTextfield);
+        cityTextField = new JTextField();
+        cityTextField.setFont(new Font("Raleway",Font.BOLD,14));
+        cityTextField.setBounds(300,490,400,30);
+        add(cityTextField);
 
         //Step13
         JLabel state = new JLabel("State:");
@@ -185,10 +190,10 @@ public class SignupOne extends JFrame  {
         add(state);
 
         //textfield
-        JTextField stateTextfield = new JTextField();
-        stateTextfield.setFont(new Font("Raleway",Font.BOLD,14));
-        stateTextfield.setBounds(300,540,400,30);
-        add(stateTextfield);
+        stateTextField = new JTextField();
+        stateTextField.setFont(new Font("Raleway",Font.BOLD,14));
+        stateTextField.setBounds(300,540,400,30);
+        add(stateTextField);
 
         //Step14
         JLabel pinCode = new JLabel("Pin Code:");
@@ -197,10 +202,10 @@ public class SignupOne extends JFrame  {
         add(pinCode);
 
         //textfield
-        JTextField pinTextfield = new JTextField();
-        pinTextfield.setFont(new Font("Raleway",Font.BOLD,14));
-        pinTextfield.setBounds(300,590,400,30);
-        add(pinTextfield);
+        pinTextField = new JTextField();
+        pinTextField.setFont(new Font("Raleway",Font.BOLD,14));
+        pinTextField.setBounds(300,590,400,30);
+        add(pinTextField);
 
 
 
