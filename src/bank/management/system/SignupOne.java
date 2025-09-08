@@ -236,8 +236,46 @@ public class SignupOne extends JFrame implements ActionListener{
         new SignupOne();
     }
 
+
+    //Step23
+    //whenever the user performs an action (like clicking a button), the actionPerformed() method is triggered.
+    //we will add data to db
     @Override
     public void actionPerformed(ActionEvent e) {
+        String formno = "" + random; //long
+        String name = nameTextField.getText();//to get values from textfield
+        String fname = fNameTextField.getText();
 
+        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        //dateChooser → This is your JDateChooser object (the date picker component).
+        //dateChooser.getDateEditor() → Gets the editor (the part where the selected date is displayed).
+        //getUiComponent() → Returns the actual Swing UI component used to display/edit the date.
+        // For JDateChooser, this is usually a JTextField.
+        //(JTextField) → Since getUiComponent() returns a generic JComponent, we cast it to JTextField.
+        //getText() → Finally, retrieves the selected date as a String (whatever is typed/shown in the text field
+
+        //now well will get values form radio button
+        String gender = null;
+        if(male.isSelected()){
+            gender = "Male";
+        } else if(female.isSelected()) {
+            gender = "Female";
+        }
+
+        String email = emailTextField.getText();
+
+        String maritalStatus = null;
+        if(married.isSelected()){
+            maritalStatus = "Married";
+        } else if (unmarried.isSelected()) {
+            maritalStatus = "Unmarried";
+        } else if (other.isSelected()) {
+            maritalStatus = "Other";
+        }
+
+        String address = addressTextField.getText();
+        String city = cityTextField.getText();
+        String state = stateTextField.getText();
+        String pin = pinTextField.getText();
     }
 }
