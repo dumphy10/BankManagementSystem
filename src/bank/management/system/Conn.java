@@ -2,7 +2,7 @@ package bank.management.system;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
-import java.util.sql.*;
+import java.sql.*;
 
 public class Conn {
 
@@ -13,7 +13,8 @@ public class Conn {
         //JDBC steps to connect to Database
         try{
             // Step1 to Register driver
-            Class.forName(com.mysql.cj.jdbc.Driver);
+            //Class.forName(com.mysql.cj.jdbc.Driver);
+
             //Step2 create connection
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bankmanagementsystem", "root", "12345");
 
