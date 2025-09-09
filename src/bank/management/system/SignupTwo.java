@@ -14,6 +14,7 @@ public class SignupTwo extends JFrame implements ActionListener{
     JRadioButton syes, sno, eyes, eno;
     JComboBox rel, categ, incom, eduqualification, occupat;
     String formno;
+    String random;
 
 
     SignupTwo(String formno){
@@ -203,7 +204,7 @@ public class SignupTwo extends JFrame implements ActionListener{
     //we will add data to db
     @Override
     public void actionPerformed(ActionEvent e) {
-         //long
+        String formno = "" + random; //long
         String sreligion = (String) rel.getSelectedItem();//to get values from religion
         String scategory = (String) categ.getSelectedItem();//object so we are typecasting to string
         String sincome = (String) incom.getSelectedItem();
@@ -241,17 +242,19 @@ public class SignupTwo extends JFrame implements ActionListener{
 
 
         //handling exception
-//        try{
-//
-//                //make call to db
-//                Conn c = new Conn();//connection established with mysql
-//               // String query = "Insert into signup values('"+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')" ;
-//               // c.s.executeUpdate(query);//then go to sql to create a table with the above column names
-//
-//            }
-//        } catch (Exception ex) {
-//            throw new RuntimeException(ex);
-//        }
+        try{
+                //make call to db
+                Conn c = new Conn();//connection established with mysql
+                String query = "Insert into signuptwo values('"+formno+"', '"+sreligion+"', '"+scategory+"', '"+sincome+"', '"+seduquali+"', '"+soccu+"', '"+span+"', '"+saadhar+"', '"+seniorcitizenGroup+"', '"+existingaccountGroup+"')" ;
+                c.s.executeUpdate(query);//then go to sql to create a table with the above column names
+
+            //SignupThree object so after clicking next in signupTwo SignUpThree will open
+
+
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+
     }
 
     public static void main(String[] args) {
