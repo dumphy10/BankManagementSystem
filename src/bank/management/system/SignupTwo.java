@@ -3,7 +3,6 @@ package bank.management.system;
 import javax.swing.*;
 import java.awt.*;
 
-import com.toedter.calendar.JDateChooser;
 import java.awt.event.*;
 
 
@@ -12,8 +11,8 @@ public class SignupTwo extends JFrame implements ActionListener{
     //globally defining
     JTextField   panTextField, aadharTextField;
     JButton next;
-    JRadioButton yes, no;
-    JDateChooser dateChooser;
+    JRadioButton syes, sno, eyes, eno;
+    JComboBox rel, categ, incom, eduqualification, occupat;
 
 
     SignupTwo(){
@@ -31,7 +30,7 @@ public class SignupTwo extends JFrame implements ActionListener{
         additionalDetails.setBounds(290,80,400,30);
         add(additionalDetails);
 
-        //For Name
+        //For religion
         JLabel religion = new JLabel("Religion:");
         religion.setFont(new Font("Raleway",Font.BOLD,20));
         religion.setBounds(100,140,100,30);
@@ -39,13 +38,13 @@ public class SignupTwo extends JFrame implements ActionListener{
 
         //for different religion
         String[] valReligion = {"Hindu", "Muslim", "Christian", "Sikh", "Other"};
-        JComboBox rel = new JComboBox(valReligion);
+        rel = new JComboBox(valReligion);
         rel.setBackground(Color.WHITE);
         rel.setBounds(300,140,400,30);
         add(rel);
 
 
-        //For Father Name
+        //For category Name
         JLabel category = new JLabel("Category:");
         category.setFont(new Font("Raleway",Font.BOLD,20));
         category.setBounds(100,190,150,30);
@@ -53,12 +52,12 @@ public class SignupTwo extends JFrame implements ActionListener{
 
         //for different categories
         String[] catValues = {"General", "OBC", "SC", "ST", "Other"};
-        JComboBox categ = new JComboBox(catValues);
+        categ = new JComboBox(catValues);
         categ.setBackground(Color.WHITE);
         categ.setBounds(300,190,400,30);
         add(categ);
 
-        //For DOB
+        //For income
         JLabel income = new JLabel("Income:");
         income.setFont(new Font("Raleway",Font.BOLD,20));
         income.setBounds(100,240,200,30);
@@ -66,10 +65,10 @@ public class SignupTwo extends JFrame implements ActionListener{
 
         //for different income
         String[] incomeValues = {"null", "< 1,50,000", "< 2,50,000", "< 5,00,000", "Upto 10,00,000"};
-        JComboBox incomeField = new JComboBox(incomeValues);
-        incomeField.setBackground(Color.WHITE);
-        incomeField.setBounds(300,240,400,30);
-        add(incomeField);
+        incom = new JComboBox(incomeValues);
+        incom.setBackground(Color.WHITE);
+        incom.setBounds(300,240,400,30);
+        add(incom);
 
         //For educational
         JLabel educational = new JLabel("Educational:");
@@ -83,12 +82,12 @@ public class SignupTwo extends JFrame implements ActionListener{
         qualification.setBounds(100,315,200,30);
         add(qualification);
 
-        //for different qualification
+        //for different educational qualification
         String[] eduqualiValues = {"Non Graduation", "Graduate", "Post-Graduate"};
-        JComboBox eduqualificationField = new JComboBox(eduqualiValues);
-        eduqualificationField.setBackground(Color.WHITE);
-        eduqualificationField.setBounds(300,315,400,30);
-        add(eduqualificationField);
+        eduqualification = new JComboBox(eduqualiValues);
+        eduqualification.setBackground(Color.WHITE);
+        eduqualification.setBounds(300,315,400,30);
+        add(eduqualification);
 
         //For  occupation
         JLabel occupation = new JLabel("Occupation:");
@@ -97,10 +96,10 @@ public class SignupTwo extends JFrame implements ActionListener{
         add(occupation);
 
         String[] occupationValues = {"Student", "Self Employed", "Business", "Corporate", "Other"};
-        JComboBox occupationField = new JComboBox(occupationValues);
-        occupationField.setBackground(Color.WHITE);
-        occupationField.setBounds(300,370,400,30);
-        add(occupationField);
+        occupat = new JComboBox(occupationValues);
+        occupat.setBackground(Color.WHITE);
+        occupat.setBounds(300,370,400,30);
+        add(occupat);
 
 
 
@@ -116,7 +115,7 @@ public class SignupTwo extends JFrame implements ActionListener{
 
 
 
-        //For address
+        //For PAN
         JLabel pan = new JLabel("PAN Number:");
         pan.setFont(new Font("Raleway",Font.BOLD,20));
         pan.setBounds(100,420,200,30);
@@ -128,7 +127,7 @@ public class SignupTwo extends JFrame implements ActionListener{
         panTextField.setBounds(300,420,400,30);
         add(panTextField);
 
-        //For city
+        //For Aadhar
         JLabel aadhar = new JLabel("Aadhar Number:");
         aadhar.setFont(new Font("Raleway",Font.BOLD,20));
         aadhar.setBounds(100,470,200,30);
@@ -140,55 +139,48 @@ public class SignupTwo extends JFrame implements ActionListener{
         aadharTextField.setBounds(300,470,400,30);
         add(aadharTextField);
 
+        //For senior
         JLabel seniorcitizen = new JLabel("Senior Citizen:");
         seniorcitizen.setFont(new Font("Raleway",Font.BOLD,20));
         seniorcitizen.setBounds(100,520,200,30);
         add(seniorcitizen);
 
         //radiobutton for senior citizen
-        yes = new JRadioButton("Yes");
-        yes.setBounds(300,520,60,30);
-        yes.setBackground(Color.WHITE);
-        add(yes);
-        no = new JRadioButton("No");
-        no.setBounds(450,520,80,30);
-        no.setBackground(Color.WHITE);
-        add(no);
+        syes = new JRadioButton("Yes");
+        syes.setBounds(300,520,60,30);
+        syes.setBackground(Color.WHITE);
+        add(syes);
+        sno = new JRadioButton("No");
+        sno.setBounds(450,520,80,30);
+        sno.setBackground(Color.WHITE);
+        add(sno);
 
         //To remove the problem of selecting both radiobuttons
         ButtonGroup seniorcitizenGroup = new ButtonGroup();
-        seniorcitizenGroup.add(yes);
-        seniorcitizenGroup.add(no);
+        seniorcitizenGroup.add(syes);
+        seniorcitizenGroup.add(sno);
 
 
-
+        //For existing
         JLabel existingaccount = new JLabel("Existing Account:");
         existingaccount.setFont(new Font("Raleway",Font.BOLD,20));
         existingaccount.setBounds(100,570,200,30);
         add(existingaccount);
 
         //radiobutton for existing account
-        yes = new JRadioButton("Yes");
-        yes.setBounds(300,570,60,30);
-        yes.setBackground(Color.WHITE);
-        add(yes);
-        no = new JRadioButton("No");
-        no.setBounds(450,570,80,30);
-        no.setBackground(Color.WHITE);
-        add(no);
+        eyes = new JRadioButton("Yes");
+        eyes.setBounds(300,570,60,30);
+        eyes.setBackground(Color.WHITE);
+        add(eyes);
+        eno = new JRadioButton("No");
+        eno.setBounds(450,570,80,30);
+        eno.setBackground(Color.WHITE);
+        add(eno);
 
         //To remove the problem of selecting both radiobuttons
         ButtonGroup existingaccountGroup = new ButtonGroup();
-        existingaccountGroup.add(yes);
-        existingaccountGroup.add(no);
-
-
-
-
-
-
-
-
+        existingaccountGroup.add(eyes);
+        existingaccountGroup.add(eno);
 
 
         getContentPane().setBackground(Color.WHITE);
@@ -209,38 +201,46 @@ public class SignupTwo extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
          //long
-        //String name = religionTextField.getText();//to get values from textfield
-        //String fname = categoryTextField.getText();
+        String sreligion = (String) rel.getSelectedItem();//to get values from religion
+        String scategory = (String) categ.getSelectedItem();//object so we are typecasting to string
+        String sincome = (String) incom.getSelectedItem();
+        String seduquali = (String) eduqualification.getSelectedItem();
+        String soccu = (String)  occupat.getSelectedItem();
+        String span = panTextField.getText();
+        String saadhar = aadharTextField.getText();
 
-        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
-        //dateChooser → This is your JDateChooser object (the date picker component).
-        //dateChooser.getDateEditor() → Gets the editor (the part where the selected date is displayed).
-        //getUiComponent() → Returns the actual Swing UI component used to display/edit the date.
-        // For JDateChooser, this is usually a JTextField.
+
         //(JTextField) → Since getUiComponent() returns a generic JComponent, we cast it to JTextField.
         //getText() → Finally, retrieves the selected date as a String (whatever is typed/shown in the text field
 
+        //for senior citizen
         //now well will get values form radio button
-        String gender = null;
-        if(yes.isSelected()){
-            gender = "Male";
-        } else if(no.isSelected()) {
-            gender = "Female";
+        String seniorcitizenGroup = null;
+        if(syes.isSelected()){
+            seniorcitizenGroup = "Yes";
+        } else if(sno.isSelected()) {
+            seniorcitizenGroup = "No";
         }
 
-       // String email = qualificationTextField.getText();
+        //for Existing account
+        //now well will get values form radio button
+        String existingaccountGroup = null;
+        if(eyes.isSelected()){
+            existingaccountGroup = "Yes";
+        } else if(eno.isSelected()) {
+            existingaccountGroup = "No";
+        }
 
 
 
-        String address = panTextField.getText();
-        String city = aadharTextField.getText();
-        //String state = seniorcitizenTextField.getText();
-       // String pin = existingaccountTextField.getText();
+
+
+
 
         //handling exception
 //        try{
-//            if(name.equals("")){//if name is empty
-//                JOptionPane.showMessageDialog(null, "Name is required");
+//            if(religion.equals("")){//if name is empty
+//                JOptionPane.showMessageDialog(null, "Religion is required");
 //            }else {
 //                //make call to db
 //                Conn c = new Conn();//connection established with mysql
