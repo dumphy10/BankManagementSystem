@@ -159,6 +159,7 @@ public class SignupOne extends JFrame implements ActionListener{
         next.setBackground(Color.BLACK);
         next.setForeground(Color.WHITE);
         next.setFont(new Font("Raleway",Font.BOLD,14));
+        next.addActionListener(this);
         add(next);
 
 
@@ -232,9 +233,7 @@ public class SignupOne extends JFrame implements ActionListener{
     }
 
 
-    public static void main(String[] args) {
-        new SignupOne();
-    }
+
 
 
     //Step23
@@ -277,5 +276,26 @@ public class SignupOne extends JFrame implements ActionListener{
         String city = cityTextField.getText();
         String state = stateTextField.getText();
         String pin = pinTextField.getText();
+
+        //Step24
+        //handling exception
+        try{
+            if(name.equals("")){//if name is empty
+                JOptionPane.showMessageDialog(null, "Name is required");
+            }else {
+                //make call to db
+                Conn c = new Conn();//connection established with mysql
+                String query = "Insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+maritalStatus+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')" ;
+                c.s.executeUpdate(query);
+
+            }
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public static void main(String[] args) {
+        new SignupOne();
+
     }
 }
