@@ -111,6 +111,11 @@ public class Login extends JFrame implements ActionListener {
         } else if (ae.getSource() == login) {
 
         } else if (ae.getSource() == signUp) {
+            //step24
+            setVisible(false);//to close the current form/page
+            //now we want to open signup frame
+            SignupOne sign = new SignupOne();
+            sign.setVisible(true);//this will open the signup page when we click the signup button
 
 
         }
