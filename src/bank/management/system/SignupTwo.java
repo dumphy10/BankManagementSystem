@@ -13,9 +13,12 @@ public class SignupTwo extends JFrame implements ActionListener{
     JButton next;
     JRadioButton syes, sno, eyes, eno;
     JComboBox rel, categ, incom, eduqualification, occupat;
+    String formno;
 
 
-    SignupTwo(){
+    SignupTwo(String formno){
+        this.formno = formno;
+
 
         setLayout(null);
 
@@ -239,9 +242,7 @@ public class SignupTwo extends JFrame implements ActionListener{
 
         //handling exception
 //        try{
-//            if(religion.equals("")){//if name is empty
-//                JOptionPane.showMessageDialog(null, "Religion is required");
-//            }else {
+//
 //                //make call to db
 //                Conn c = new Conn();//connection established with mysql
 //               // String query = "Insert into signup values('"+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')" ;
@@ -254,7 +255,7 @@ public class SignupTwo extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-        new SignupTwo();
+        new SignupTwo("");
 
     }
 }

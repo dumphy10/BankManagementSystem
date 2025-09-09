@@ -288,6 +288,9 @@ public class SignupOne extends JFrame implements ActionListener{
                 String query = "Insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+maritalStatus+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')" ;
                 c.s.executeUpdate(query);//then go to sql to create a table with the above column names
 
+                //when we click next we want to go to next page
+                setVisible(false);
+                new SignupTwo(formno).setVisible(true);
             }
         } catch (Exception ex) {
             throw new RuntimeException(ex);
