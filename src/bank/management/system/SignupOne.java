@@ -286,7 +286,7 @@ public class SignupOne extends JFrame implements ActionListener{
                 //make call to db
                 Conn c = new Conn();//connection established with mysql
                 String query = "Insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+maritalStatus+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')" ;
-                c.s.executeUpdate(query);
+                c.s.executeUpdate(query);//then go to sql to create a table with the above column names
 
             }
         } catch (Exception ex) {
