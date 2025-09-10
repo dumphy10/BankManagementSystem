@@ -196,6 +196,29 @@ public class SignupThree extends JFrame implements ActionListener {
             String cardno = "" + Math.abs((random.nextLong() % 90000000L)) + 5040936000000000L;
             //for pin no
             String pinnumber = "" + Math.abs((random.nextLong() % 9000L) +1000L);
+
+            //for multiple checkbox
+            //user is selecting multiple checkbox
+            String facility = "";
+            if (c1.isSelected()){
+                facility = facility + " ATM Card";
+            } else if(c2.isSelected()){
+                facility = facility + " Internet Banking";
+            } else if(c3.isSelected()){
+                facility = facility + " Mobile Banking";
+            } else if(c4.isSelected()){
+                facility = facility + " EMAIL & SMS Alerts";
+            } else if(c5.isSelected()){
+                facility = facility + " Cheque Book";
+            } else if(c6.isSelected()){
+                facility = facility + " E-Statement";
+            }
+
+
+
+
+
+
         } else if (e.getSource() == cancel){
 
         }
