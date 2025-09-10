@@ -7,6 +7,7 @@ public class SignupThree extends JFrame {
 
     JRadioButton r1, r2, r3, r4;
     JCheckBox c1,c2,c3,c4,c5,c6,c7;
+    JButton cancel, submit;
 
     SignupThree(){
 
@@ -140,8 +141,25 @@ public class SignupThree extends JFrame {
         c7 = new JCheckBox("I hereby declares that the above entered details are correct to the best of my knowledge");
         c7.setBackground(Color.WHITE);
         c7.setFont(new Font("Raleway",Font.BOLD,12));
-        c7.setBounds(100,680,600,30);
+        c7.setBounds(100,680,580,30);
         add(c7);
+
+        //creating button
+        cancel = new JButton("Cancel");
+        cancel.setBackground(Color.BLACK);
+        cancel.setForeground(Color.WHITE);
+        cancel.setForeground(Color.white);
+        cancel.setFont(new Font("Raleway",Font.BOLD,12));
+        cancel.setBounds(100,730,200,30);
+        add(cancel);
+
+        submit = new JButton("Submit");
+        submit.setBackground(Color.BLACK);
+        submit.setForeground(Color.WHITE);
+        submit.setForeground(Color.white);
+        submit.setFont(new Font("Raleway",Font.BOLD,12));
+        submit.setBounds(350,730,200,30);
+        add(submit);
 
 
 
