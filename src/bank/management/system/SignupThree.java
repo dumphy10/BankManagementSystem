@@ -19,6 +19,13 @@ public class SignupThree extends JFrame {
         l1.setBounds(280,40,400,40);
         add(l1);
 
+        JLabel type = new JLabel("Account Type");
+        type.setFont(new Font("Raleway",Font.BOLD,22));
+        type.setBounds(100,140,200,30);
+        add(type);
+
+
+
     }
 
 
