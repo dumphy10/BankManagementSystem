@@ -150,7 +150,7 @@ public class SignupThree extends JFrame {
         cancel.setForeground(Color.WHITE);
         cancel.setForeground(Color.white);
         cancel.setFont(new Font("Raleway",Font.BOLD,12));
-        cancel.setBounds(100,730,200,30);
+        cancel.setBounds(300,730,100,30);
         add(cancel);
 
         submit = new JButton("Submit");
@@ -158,7 +158,7 @@ public class SignupThree extends JFrame {
         submit.setForeground(Color.WHITE);
         submit.setForeground(Color.white);
         submit.setFont(new Font("Raleway",Font.BOLD,12));
-        submit.setBounds(350,730,200,30);
+        submit.setBounds(450,730,100,30);
         add(submit);
 
 
