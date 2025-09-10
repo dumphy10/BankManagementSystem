@@ -51,6 +51,14 @@ public class SignupThree extends JFrame {
         r4.setBounds(350,220,250,20);
         add(r4);
 
+        //to remove all button clicks problem
+        ButtonGroup groupaccount = new ButtonGroup();
+        groupaccount.add(r1);
+        groupaccount.add(r2);
+        groupaccount.add(r3);
+        groupaccount.add(r4);
+
+
 
 
     }
