@@ -92,6 +92,12 @@ public class SignupThree extends JFrame {
         pnumber.setBounds(330,370,300,30);
         add(pnumber);
 
+        //for services
+        JLabel services = new JLabel("Services Required:");//DUMMY CARD NO
+        services.setFont(new Font("Raleway",Font.BOLD,22));
+        services.setBounds(100,450,250,30);
+        add(services);
+
 
 
     }
