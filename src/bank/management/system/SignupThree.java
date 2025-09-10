@@ -194,7 +194,7 @@ public class SignupThree extends JFrame implements ActionListener {
 
             Random random = new Random();
             //for card no
-            String cardnumber = "" + Math.abs((random.nextLong() % 90000000L)) + 5040936000000000L;
+            String cardnumber = "" + Math.abs((random.nextLong() % 90000000L) + 5040936000000000L);
             //for pin no
             String pinnumber = "" + Math.abs((random.nextLong() % 9000L) +1000L);
 
@@ -224,8 +224,14 @@ public class SignupThree extends JFrame implements ActionListener {
                 } else{
                     Conn conn = new Conn();//make call to db
                     String query1 = "Insert into signupthree values('"+formno+"', '"+accountType+"', '"+ cardnumber +"', '"+pinnumber+"', '"+facility+"')" ;
+
+                    //for login
+                    String query2 = "Insert into login values('"+formno+"',  '"+ cardnumber +"', '"+pinnumber+"')" ;
+
+
                     //to update database
                     conn.s.executeUpdate(query1);//then go to sql to create a table with the above column names
+                    conn.s.executeUpdate(query2);
 
                     //showing user their pin and atm card no
                     JOptionPane.showMessageDialog(null, "Card Number: " + cardnumber + "\n Pin: " + pinnumber);
