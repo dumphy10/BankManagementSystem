@@ -58,6 +58,16 @@ public class SignupThree extends JFrame {
         groupaccount.add(r3);
         groupaccount.add(r4);
 
+        //for card no
+        JLabel card = new JLabel("Card Number");
+        card.setFont(new Font("Raleway",Font.BOLD,22));
+        card.setBounds(100,300,200,30);
+        add(card);
+
+        JLabel number = new JLabel("XXXX-XXXX-XXXX-2451");//DUMMY CARD NO
+        number.setFont(new Font("Raleway",Font.BOLD,22));
+        number.setBounds(330,300,300,30);
+        add(number);
 
 
 
