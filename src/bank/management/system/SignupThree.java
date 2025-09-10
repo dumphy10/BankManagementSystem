@@ -11,9 +11,10 @@ public class SignupThree extends JFrame implements ActionListener {
     JRadioButton r1, r2, r3, r4;
     JCheckBox c1,c2,c3,c4,c5,c6,c7;
     JButton cancel, submit;
+    String formno;
 
-    SignupThree(){
-
+    SignupThree(String formno){
+        this.formno= formno;
         setLayout(null);
 
         setSize(850,820);
@@ -214,6 +215,23 @@ public class SignupThree extends JFrame implements ActionListener {
                 facility = facility + " E-Statement";
             }
 
+            //handling exception for database
+            try {
+                //if account type is empty
+                if(accountType.equals("")){
+                    JOptionPane.showMessageDialog(null, "Account Type is Required");//if user has not selected account type
+
+                } else{
+                    Conn conn = new Conn();//make call to db
+                    String query1 = "Insert into signupthree values('"+formno+"', '"+accountType+"', '"+cardno+"', '"+pinnumber+"', '"+facility+"')" ;
+                    //to update database
+                    conn.s.executeUpdate(query1);//then go to sql to create a table with the above column names
+                }
+
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+
 
 
 
@@ -237,7 +255,7 @@ public class SignupThree extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
 
-        new SignupThree();
+        new SignupThree("");
 
     }
 

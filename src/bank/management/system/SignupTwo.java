@@ -14,7 +14,6 @@ public class SignupTwo extends JFrame implements ActionListener{
     JRadioButton syes, sno, eyes, eno;
     JComboBox rel, categ, incom, eduqualification, occupat;
     String formno;
-    String random;
 
 
     SignupTwo(String formno){
@@ -204,7 +203,7 @@ public class SignupTwo extends JFrame implements ActionListener{
     //we will add data to db
     @Override
     public void actionPerformed(ActionEvent e) {
-        String formno = "" + random; //long
+
         String sreligion = (String) rel.getSelectedItem();//to get values from religion
         String scategory = (String) categ.getSelectedItem();//object so we are typecasting to string
         String sincome = (String) incom.getSelectedItem();
@@ -249,6 +248,8 @@ public class SignupTwo extends JFrame implements ActionListener{
                 c.s.executeUpdate(query);//then go to sql to create a table with the above column names
 
             //SignupThree object so after clicking next in signupTwo SignUpThree will open
+            setVisible(false);
+            new SignupThree(formno).setVisible(true);
 
 
         } catch (Exception ex) {
