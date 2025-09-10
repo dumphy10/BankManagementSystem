@@ -2,8 +2,10 @@ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SignupThree extends JFrame {
+public class SignupThree extends JFrame implements ActionListener {
 
     JRadioButton r1, r2, r3, r4;
     JCheckBox c1,c2,c3,c4,c5,c6,c7;
@@ -151,6 +153,7 @@ public class SignupThree extends JFrame {
         cancel.setForeground(Color.white);
         cancel.setFont(new Font("Raleway",Font.BOLD,12));
         cancel.setBounds(300,730,100,30);
+        cancel.addActionListener(this);
         add(cancel);
 
         submit = new JButton("Submit");
@@ -159,10 +162,37 @@ public class SignupThree extends JFrame {
         submit.setForeground(Color.white);
         submit.setFont(new Font("Raleway",Font.BOLD,12));
         submit.setBounds(450,730,100,30);
+        submit.addActionListener(this);
         add(submit);
 
 
         getContentPane().setBackground(Color.WHITE);
+
+
+
+    }
+
+
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if(e.getSource() == submit){
+            String accountType = null;
+            if(r1.isSelected()){
+                accountType = "Saving Account";
+            } else if (r2.isSelected()){
+                accountType = "Fixed Deposit Account";
+            } else if (r3.isSelected()) {
+                accountType = "Current Account";
+            } else if (r4.isSelected()) {
+                accountType = "Reccuring Deposit Account";
+            }
+
+        } else if (e.getSource() == cancel){
+
+        }
 
 
 
@@ -181,6 +211,7 @@ public class SignupThree extends JFrame {
         new SignupThree();
 
     }
+
 
 
 }
