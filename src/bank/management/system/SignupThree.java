@@ -162,6 +162,9 @@ public class SignupThree extends JFrame {
         add(submit);
 
 
+        getContentPane().setBackground(Color.WHITE);
+
+
 
     }
 
