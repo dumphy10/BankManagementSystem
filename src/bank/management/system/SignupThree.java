@@ -69,6 +69,29 @@ public class SignupThree extends JFrame {
         number.setBounds(330,300,300,30);
         add(number);
 
+        //to show user this is ur 16 digit
+        JLabel carddetail = new JLabel("Your 16 digit Card Number");//DUMMY CARD NO
+        carddetail.setFont(new Font("Raleway",Font.BOLD,12));
+        carddetail.setBounds(100,330,300,20);
+        add(carddetail);
+
+        //for pin
+        JLabel pin = new JLabel("PIN");
+        pin.setFont(new Font("Raleway",Font.BOLD,22));
+        pin.setBounds(100,370,200,30);
+        add(pin);
+
+        //to show user this is ur 4 digit pin
+        JLabel pindetail = new JLabel("Your 4 digit PIN ");//DUMMY CARD NO
+        pindetail.setFont(new Font("Raleway",Font.BOLD,12));
+        pindetail.setBounds(100,400,200,20);
+        add(pindetail);
+
+        JLabel pnumber = new JLabel("XXXX");//DUMMY CARD NO
+        pnumber.setFont(new Font("Raleway",Font.BOLD,22));
+        pnumber.setBounds(330,370,300,30);
+        add(pnumber);
+
 
 
     }
