@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class SignupThree extends JFrame implements ActionListener {
 
@@ -190,6 +191,11 @@ public class SignupThree extends JFrame implements ActionListener {
                 accountType = "Reccuring Deposit Account";
             }
 
+            Random random = new Random();
+            //for card no
+            String cardno = "" + Math.abs((random.nextLong() % 90000000L)) + 5040936000000000L;
+            //for pin no
+            String pinnumber = "" + Math.abs((random.nextLong() % 9000L) +1000L);
         } else if (e.getSource() == cancel){
 
         }
