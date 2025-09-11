@@ -7,6 +7,11 @@ public class Transactions extends JFrame {
     Transactions(){
 
 
+
+        setSize(900, 900);
+        setLocation(300, 0);
+        setVisible(true);
+
     }
 
 
