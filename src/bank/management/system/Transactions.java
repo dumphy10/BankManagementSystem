@@ -9,8 +9,9 @@ public class Transactions extends JFrame implements ActionListener {
 
     JButton deposit, withdrawl, miniStatement, pinChange, fastCash, balanceEnquiry, exit;
 
-    Transactions(){
-
+    String pinnumber;
+    Transactions(String pinnumber){
+        this.pinnumber = pinnumber;
 
         setLayout(null);
 
@@ -99,7 +100,7 @@ public class Transactions extends JFrame implements ActionListener {
 
 
     public static void main(String[] args) {
-        new Transactions();
+        new Transactions("");
     }
 
 
