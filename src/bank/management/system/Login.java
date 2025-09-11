@@ -4,6 +4,7 @@ import javax.swing.*; //contains JFrame
 import java.awt.*; //contains Image class
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 public class Login extends JFrame implements ActionListener {
 
@@ -108,14 +109,44 @@ public class Login extends JFrame implements ActionListener {
             cardTextField.setText("");
             pinTextField.setText("");
 
+
+        //Important to understand
+        //we are matching the db cardno and pin to user's enters cardno and pin and checking if true
+        //signinbutton will take the user to transaction frame
         } else if (ae.getSource() == login) {
+
+           Conn conn = new Conn();
+           String cardnumber = cardTextField.getText();//to extract values from cardnumber
+           String pinnumber = pinTextField.getText(); //to extract values from pin
+
+           //to fetch data of cardno and pin from login table in db
+           String query = "Select * from login where cardNumber = '"+cardnumber+"' and pin = '"+pinnumber+"'";
+
+           //to hit in db
+           try{
+
+               ResultSet rs = conn.s.executeQuery(query);//the data we have fetched we stored that in resultset object's
+
+               //now checking if data has come
+               if(rs.next()){
+                   setVisible(false);//if user has successfully login then we will close the login page and
+                   new Transactions().setVisible(true); // open the transaction page
+
+               } else{
+                   JOptionPane.showMessageDialog(null, "Incorrect Card Number or Pin");//else show this message to user
+               }
+
+           } catch (Exception e) {
+               System.out.println(e);
+           }
+
 
         } else if (ae.getSource() == signUp) {
             //step24
             setVisible(false);//to close the current form/page
             //now we want to open signup frame
-            SignupOne sign = new SignupOne();
-            sign.setVisible(true);//this will open the signup page when we click the signup button
+            SignupOne signOne = new SignupOne();
+            signOne.setVisible(true);//this will open the signup page when we click the signup button
 
 
         }
