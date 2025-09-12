@@ -236,6 +236,9 @@ public class SignupThree extends JFrame implements ActionListener {
                     //showing user their pin and atm card no
                     JOptionPane.showMessageDialog(null, "Card Number: " + cardnumber + "\n Pin: " + pinnumber);
 
+                    setVisible(false);
+                    new Deposit(pinnumber).setVisible(false);
+
                 }
 
             } catch (Exception ex) {
@@ -248,7 +251,8 @@ public class SignupThree extends JFrame implements ActionListener {
 
 
         } else if (e.getSource() == cancel){
-
+            setVisible(false);
+            new Login().setVisible(true);
         }
 
 
