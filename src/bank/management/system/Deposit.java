@@ -2,11 +2,17 @@ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Deposit extends JFrame {
+public class Deposit extends JFrame implements ActionListener {
 
-    Deposit(){
+    JButton deposit, back;
+    JTextField amount;
 
+    String pinnumber;
+    Deposit(String pinnumber){
+        this.pinnumber = pinnumber;
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
@@ -22,17 +28,19 @@ public class Deposit extends JFrame {
         text.setBounds(190,300,400,20);
         image.add(text);
 
-        JTextField amount = new JTextField();
+        amount = new JTextField();
         amount.setFont(new Font("Raleway",Font.BOLD,22));
         amount.setBounds(190,350,295,25);
         image.add(amount);
 
-        JButton deposit = new JButton("Deposit");
+        deposit = new JButton("Deposit");
         deposit.setBounds(355,485,150,30);
+        deposit.addActionListener(this);
         image.add(deposit);
 
-        JButton back = new JButton("Back");
+        back = new JButton("Back");
         back.setBounds(355,520,150,30);
+        back.addActionListener(this);
         image.add(back);
 
 
@@ -49,7 +57,20 @@ public class Deposit extends JFrame {
     }
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
+        if(e.getSource() == deposit){
+
+
+
+        } else if (e.getSource() == back) {
+                setVisible(false);//closing current frame
+                new Transactions(pinnumber).setVisible(true);
+        }
+
+
+    }
 
 
 
@@ -61,7 +82,8 @@ public class Deposit extends JFrame {
 
 
     public static void main(String[] args) {
-        new Deposit();
+        new Deposit("");
     }
+
 
 }

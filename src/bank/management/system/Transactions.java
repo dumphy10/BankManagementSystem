@@ -88,8 +88,10 @@ public class Transactions extends JFrame implements ActionListener {
 
         if(e.getSource() == exit){
             System.exit(0);//frame will be closed on clicking exit button
+        } else if (e.getSource() == deposit) {
+            setVisible(false);//frame will be closed on clicking deposit button
+            new Deposit(pinnumber).setVisible(true);//and deposit frame will be opened
         }
-
 
 
     }
