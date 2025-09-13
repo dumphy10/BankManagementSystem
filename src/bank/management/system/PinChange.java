@@ -31,11 +31,21 @@ public class PinChange extends JFrame {
         pinText.setBounds(165,320,180,25);
         image.add(pinText);
 
+        JTextField pin = new JTextField();
+        pin.setFont(new Font("Raleway",Font.BOLD,25));
+        pin.setBounds(330,320,180,25);
+        image.add(pin);
+
         JLabel repinText = new JLabel("Re-Enter PIN:");
         repinText.setForeground(Color.WHITE);
         repinText.setFont(new Font("System", Font.BOLD,16));
         repinText.setBounds(165,360,180,25);
         image.add(repinText);
+
+        JTextField repin = new JTextField();
+        repin.setFont(new Font("Raleway",Font.BOLD,25));
+        repin.setBounds(330,360,180,25);
+        image.add(repin);
 
 
     }
