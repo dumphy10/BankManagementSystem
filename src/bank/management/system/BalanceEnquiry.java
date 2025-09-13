@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 public class BalanceEnquiry extends JFrame implements ActionListener {
 
@@ -29,12 +30,40 @@ public class BalanceEnquiry extends JFrame implements ActionListener {
         image.add(back);
 
 
+        Conn c = new Conn();
+        int balance = 0;
+        try{
+            //checking if there is sufficient balance in account or not to withdraw
+            ResultSet rs = c.s.executeQuery("select * from bank where pin = '" + pinnumber + "' ");//using pinumber we will get the data from bank and we will calculate balance amount
+
+            while (rs.next()) {//to loop each row in bank table to get balance
+
+                if (rs.getString("type").equals("Deposit")) {
+                    balance += Integer.parseInt(rs.getString("amount"));//if user deposit money
+                } else {
+                    balance -= Integer.parseInt(rs.getString("amount"));// if user withdraws money
+                }
+
+            }
+        }catch(Exception e){
+            System.out.println(e);
+            }
+
+
+        JLabel text = new JLabel("Your Current Account balance is Rs " + balance);
+        text.setForeground(Color.WHITE);
+        text.setBounds(170,300,400,30);
+        image.add(text);
+
+
+
+
+
 
         setSize(900,900);
         setLocation(300,0);
         setUndecorated(true);
         setVisible(true);
-
 
     }
 
