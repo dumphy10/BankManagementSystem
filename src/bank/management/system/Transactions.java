@@ -86,7 +86,7 @@ public class Transactions extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource() == exit){
+        if (e.getSource() == exit) {
             System.exit(0);//frame will be closed on clicking exit button
         } else if (e.getSource() == deposit) {
             setVisible(false);//frame will be closed on clicking deposit button
@@ -94,9 +94,11 @@ public class Transactions extends JFrame implements ActionListener {
         } else if (e.getSource() == withdrawl) {
             setVisible(false);
             new Withdraw(pinnumber).setVisible(true);
+        } else if (e.getSource() == fastCash) {
+            setVisible(false);
+            new FastCash(pinnumber).setVisible(true);
+
         }
-
-
     }
 
 
