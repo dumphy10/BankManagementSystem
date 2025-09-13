@@ -7,10 +7,13 @@ import java.awt.event.ActionListener;
 
 public class PinChange extends JFrame implements ActionListener {
 
-    JTextField pin, repin;
+    JPasswordField pin, repin;
     JButton change, back;
 
-    PinChange(String pinchange){
+    String pinnumber;
+    PinChange(String pinnumber){
+        this.pinnumber = pinnumber;
+
         setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/atm.jpg"));
@@ -33,7 +36,7 @@ public class PinChange extends JFrame implements ActionListener {
         pinText.setBounds(165,320,180,25);
         image.add(pinText);
 
-        pin = new JTextField();
+        pin = new JPasswordField();
         pin.setFont(new Font("Raleway",Font.BOLD,25));
         pin.setBounds(330,320,180,25);
         image.add(pin);
@@ -44,7 +47,7 @@ public class PinChange extends JFrame implements ActionListener {
         repinText.setBounds(165,360,180,25);
         image.add(repinText);
 
-        repin = new JTextField();
+        repin = new JPasswordField();
         repin.setFont(new Font("Raleway",Font.BOLD,25));
         repin.setBounds(330,360,180,25);
         image.add(repin);
@@ -64,6 +67,7 @@ public class PinChange extends JFrame implements ActionListener {
 
         setSize(900,900);
         setLocation(300,0);
+        setUndecorated(true);
         setVisible(true);
 
 
@@ -97,6 +101,23 @@ public class PinChange extends JFrame implements ActionListener {
 
                 //if everything is fine connect to Db
                 Conn conn = new Conn();
+                String query1 = "update bank set pin = '"+rpin+"' where pin='"+pinnumber+"'";
+                String query2 = "update login set pin = '"+rpin+"' where pin='"+pinnumber+"'";
+                String query3 = "update signupthree set pin = '"+rpin+"' where pin='"+pinnumber+"'";
+
+                conn.s.executeUpdate(query1);
+                conn.s.executeUpdate(query2);
+                conn.s.executeUpdate(query3);
+
+                JOptionPane.showMessageDialog(null,"PIN changed successfully");
+
+                setVisible(false);
+                new Transactions(rpin).setVisible(true);//because now our pin has changed from pinnumber to rpin
+
+
+
+
+
 
 
 
