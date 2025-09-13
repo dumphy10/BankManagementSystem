@@ -2,8 +2,10 @@ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class BalanceEnquiry extends JFrame {
+public class BalanceEnquiry extends JFrame implements ActionListener {
 
     JButton back;
 
@@ -23,19 +25,25 @@ public class BalanceEnquiry extends JFrame {
 
         back = new JButton("Back");
         back.setBounds(355,520,150,30);
+        back.addActionListener(this);
         image.add(back);
 
 
 
         setSize(900,900);
         setLocation(300,0);
+        setUndecorated(true);
         setVisible(true);
 
 
+    }
 
 
 
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+            setVisible(false);
+            new Transactions(pinnumber).setVisible(true);
 
     }
 
@@ -46,6 +54,7 @@ public class BalanceEnquiry extends JFrame {
     public static void main(String[] args) {
         new BalanceEnquiry("");
     }
+
 
 }
 
