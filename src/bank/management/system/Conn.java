@@ -13,7 +13,7 @@ public class Conn {
         //JDBC steps to connect to Database
         try{
             // Step1 to Register driver
-            //Class.forName(com.mysql.cj.jdbc.Driver);
+            //Class.forName(com.mysql.cj.jdbc.Driver);//optional step
 
             //Step2 create connection
             c = DriverManager.getConnection("jdbc:mysql://localhost:3306/bankmanagementsystem", "root", "12345");
