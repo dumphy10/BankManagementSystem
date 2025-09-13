@@ -5,7 +5,10 @@ import java.awt.*;
 
 public class BalanceEnquiry extends JFrame {
 
+    JButton back;
+
     String pinnumber;
+
     BalanceEnquiry(String pinnumber){
         this.pinnumber=pinnumber;
 
@@ -17,6 +20,10 @@ public class BalanceEnquiry extends JFrame {
         JLabel image = new JLabel(i3);
         image.setBounds(0,0,900,900);
         add(image);
+
+        back = new JButton("Back");
+        back.setBounds(355,520,150,30);
+        image.add(back);
 
 
 
