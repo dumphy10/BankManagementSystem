@@ -18,6 +18,14 @@ public class PinChange extends JFrame {
         setSize(900,900);
         setLocation(300,0);
         setVisible(true);
+
+        JLabel text = new JLabel("CHANGE YOUR PIN");
+        text.setForeground(Color.WHITE);
+        text.setFont(new Font("System", Font.BOLD,16));
+        text.setBounds(250,280,500,35);
+        image.add(text);
+
+
     }
 
 
