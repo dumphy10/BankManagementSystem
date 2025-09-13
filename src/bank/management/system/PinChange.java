@@ -15,9 +15,6 @@ public class PinChange extends JFrame {
         image.setBounds(0,0,900,900);
         add(image);
 
-        setSize(900,900);
-        setLocation(300,0);
-        setVisible(true);
 
         JLabel text = new JLabel("CHANGE YOUR PIN");
         text.setForeground(Color.WHITE);
@@ -46,6 +43,30 @@ public class PinChange extends JFrame {
         repin.setFont(new Font("Raleway",Font.BOLD,25));
         repin.setBounds(330,360,180,25);
         image.add(repin);
+
+        JButton change = new JButton("CHANGE");
+        change.setBounds(355,485,150,30);
+        image.add(change);
+
+        JButton back = new JButton("BACK");
+        back.setBounds(355,520,150,30);
+        image.add(back);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        setSize(900,900);
+        setLocation(300,0);
+        setVisible(true);
 
 
     }
