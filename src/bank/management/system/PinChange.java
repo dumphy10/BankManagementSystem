@@ -2,8 +2,13 @@ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class PinChange extends JFrame {
+public class PinChange extends JFrame implements ActionListener {
+
+    JTextField pin, repin;
+    JButton change, back;
 
     PinChange(String pinchange){
         setLayout(null);
@@ -28,7 +33,7 @@ public class PinChange extends JFrame {
         pinText.setBounds(165,320,180,25);
         image.add(pinText);
 
-        JTextField pin = new JTextField();
+        pin = new JTextField();
         pin.setFont(new Font("Raleway",Font.BOLD,25));
         pin.setBounds(330,320,180,25);
         image.add(pin);
@@ -39,27 +44,20 @@ public class PinChange extends JFrame {
         repinText.setBounds(165,360,180,25);
         image.add(repinText);
 
-        JTextField repin = new JTextField();
+        repin = new JTextField();
         repin.setFont(new Font("Raleway",Font.BOLD,25));
         repin.setBounds(330,360,180,25);
         image.add(repin);
 
-        JButton change = new JButton("CHANGE");
+        change = new JButton("CHANGE");
         change.setBounds(355,485,150,30);
+        change.addActionListener(this);
         image.add(change);
 
-        JButton back = new JButton("BACK");
+        back = new JButton("BACK");
         back.setBounds(355,520,150,30);
+        back.addActionListener(this);
         image.add(back);
-
-
-
-
-
-
-
-
-
 
 
 
@@ -72,7 +70,48 @@ public class PinChange extends JFrame {
     }
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
+        if (e.getSource() == change) {
+            try {
+
+                String npin = pin.getText();//taking user input in a variable
+                String rpin = repin.getText();
+                if (!npin.equals(rpin)) {
+                    JOptionPane.showMessageDialog(null, "Entered pin does not match");
+                    return;
+                }
+
+                //check new pin is not empty
+                if(npin.equals("")){
+                    JOptionPane.showMessageDialog(null,"Please enter new PIN");
+                    return;
+                }
+
+                //check re pin is not empty
+                if(rpin.equals("")){
+                    JOptionPane.showMessageDialog(null,"Please re-enter new PIN");
+                    return;
+                }
+
+                //if everything is fine connect to Db
+                Conn conn = new Conn();
+
+
+
+            }catch(Exception ex){
+                System.out.println(ex);
+            }
+
+        }else{
+            //If back button is clicked
+            setVisible(false);
+            new Transactions(pinnumber).setVisible(true);
+        }
+
+
+    }
 
 
 
@@ -82,4 +121,6 @@ public class PinChange extends JFrame {
     public static void main(String[] args) {
         new PinChange("").setVisible(true);
     }
+
+
 }
