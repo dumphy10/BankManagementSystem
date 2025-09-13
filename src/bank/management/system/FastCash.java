@@ -107,7 +107,6 @@ public class FastCash extends JFrame implements ActionListener {
                     } else {
                         balance -= Integer.parseInt(rs.getString("amount"));// if user withdraws money
                     }
-
                 }
 
                     //to check that is exit button is not clicked
