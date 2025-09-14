@@ -25,6 +25,10 @@ public class MiniStatement extends JFrame {
         card.setBounds(20,80,300,20);
         add(card);
 
+        JLabel balance = new JLabel();
+        balance.setBounds(20,400,300,20);
+        add(balance);
+
         try{
 
             Conn conn = new Conn();
@@ -41,12 +45,22 @@ public class MiniStatement extends JFrame {
         try{
 
             Conn conn = new Conn();
+            int bal = 0;
             ResultSet rs = conn.s.executeQuery("select * from bank where pin = '"+pinnumber+"' ");
 
             while(rs.next()){
                 //&nbsp for spaces
-                mini.setText(mini.getText() + "<html" + rs.getString("date") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("type") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("amount") + "<br><br><html>" );//to display all details from bank table such as date type, with the help of html tags
+                mini.setText(mini.getText() + "<html>" + rs.getString("date") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("type") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("amount") + "<br><br><html>" );//to display all details from bank table such as date type, with the help of html tags
+
+                //to calculate balance
+                if(rs.getString("type").equals("Deposit")){
+                    bal += Integer.parseInt(rs.getString("amount"));//if user deposit money
+                } else {
+                    bal -= Integer.parseInt(rs.getString("amount"));// if user withdraws money
+                }
             }
+            //to display balance
+            balance.setText("Your current account balance is Rs " + bal);
 
         } catch (Exception e) {
             System.out.println(e);
