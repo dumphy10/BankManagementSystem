@@ -2,6 +2,7 @@ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.ResultSet;
 
 public class MiniStatement extends JFrame {
 
@@ -22,6 +23,25 @@ public class MiniStatement extends JFrame {
         JLabel card = new JLabel();
         card.setBounds(20,80,300,20);
         add(card);
+
+        try{
+
+            Conn conn = new Conn();
+            ResultSet rs = conn.s.executeQuery("select * from login where pin = '"+pinnumber+"' ");
+
+            while(rs.next()){
+                card.setText("Card Number: " + rs.getString("cardNumber").substring(0, 4) + "XXXXXXXX" + rs.getString("cardNumber").substring(12));//to put values in labels using setText
+
+
+            }
+
+
+
+
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
 
 
