@@ -13,8 +13,9 @@ public class MiniStatement extends JFrame {
 
         setTitle("Mini Statement");
 
-        JLabel text = new JLabel();//we will insert value dynamically
-        add(text);
+        JLabel mini = new JLabel();//we will insert value dynamically
+        mini.setBounds(20,140,400,200);
+        add(mini);
 
         JLabel bank = new JLabel("Spring Bank");
         bank.setBounds(150,20,100,20);
@@ -31,17 +32,26 @@ public class MiniStatement extends JFrame {
 
             while(rs.next()){
                 card.setText("Card Number: " + rs.getString("cardNumber").substring(0, 4) + "XXXXXXXX" + rs.getString("cardNumber").substring(12));//to put values in labels using setText
-
-
             }
-
-
-
-
 
         } catch (Exception e) {
             System.out.println(e);
         }
+
+        try{
+
+            Conn conn = new Conn();
+            ResultSet rs = conn.s.executeQuery("select * from bank where pin = '"+pinnumber+"' ");
+
+            while(rs.next()){
+                //&nbsp for spaces
+                mini.setText(mini.getText() + "<html" + rs.getString("date") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("type") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + rs.getString("amount") + "<br><br><html>" );//to display all details from bank table such as date type, with the help of html tags
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
 
 
 
